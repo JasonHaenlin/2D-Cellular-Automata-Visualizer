@@ -41,8 +41,6 @@ const check = () => {
 }
 
 const draw = () => {
-    console.log('drawing');
-
     const canvas = document.getElementById('canvas');
     if (canvas.getContext) {
         g_ctx = canvas.getContext('2d');
@@ -69,6 +67,11 @@ const reset = () => {
     g_frame = 0;
 }
 
+const restart = () => {
+    reset();
+    start();
+}
+
 const drawGrid = () => {
     for (let y = 0; y < g_height; y++) {
         for (let x = 0; x < g_width; x++) {
@@ -77,7 +80,10 @@ const drawGrid = () => {
         }
     }
     g_frame += g_height + 1;
-    if (g_frame >= g_data.length) { reset(); }
+    if (g_frame >= g_data.length) {
+        reset();
+        console.log('--END-ANIMATION--');
+    }
 }
 
 const updateFilePlaceHolder = () => {
@@ -97,7 +103,6 @@ const getState = (x, y) => {
 }
 
 const nextFrame = () => {
-    let currentSpeed;
     g_process = setTimeout(() => {
         if (g_data) { window.requestAnimationFrame(draw); }
         nextFrame();
