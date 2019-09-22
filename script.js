@@ -120,9 +120,9 @@ const readFile = (file) => {
 
 const parseFileData = (data) => {
     const datalist = data
-        .split(/\n/)
+        .split(/\r/)
         .join((' '))
-        .split(/\r/);
+        .split(/\n/);
     const result = new Array();
     datalist.forEach(line => {
         result.push(line
@@ -130,6 +130,7 @@ const parseFileData = (data) => {
             .trimRight()
             .split(' '));
     });
+
     g_frame = 0;
     g_data = result;
     g_height = 0;
