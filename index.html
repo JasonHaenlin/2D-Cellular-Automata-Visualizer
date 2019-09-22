@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>2D Cellular Automata Visualizer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- bootstrap -->
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- bootstrap slider -->
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap-slider.min.css">
+    <script type="text/javascript" src="./lib/bootstrap-slider.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="check()">
+    <div class="container">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Data</span>
+            </div>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                    onchange="updateFilePlaceHolder()">
+                <label id="inputGroupFile01-label" class="custom-file-label" for="inputGroupFile01"">Select or Drop a file</label>
+            </div>
+        </div>
+        <div class=" input-group mb-3">
+                    <div class="input-group-prepend input-group-text">Speed:
+                        <span id="slider-value" class=""></span>
+                    </div>
+                    <div class="input-group-append form-control">
+                        <input type="text" class="slider" />
+                    </div>
+            </div>
+            <div class=" mb-2">
+                <button class="btn btn-primary" onclick="start()">START</button>
+                <button class="btn btn-secondary" onclick="stop()">STOP</button>
+            </div>
+            <div class="mb-2">
+                <canvas id="canvas" height="300"></canvas>
+            </div>
+        </div>
+</body>
+
+</html>
