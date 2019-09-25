@@ -29,6 +29,7 @@ const check = () => {
         min: 10,
         max: g_maxSpeed,
         value: g_refreshSpeed,
+        scale: 'logarithmic',
         step: 5
     });
 
