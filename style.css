@@ -50,3 +50,21 @@ canvas {
 .slider-track-high {
     background-color: hsla(45, 100%, 51%, 0.2);
 }
+
+.alive,
+.dead {
+    padding: 0.1em;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 0.3em;
+    width: 3em;
+    display: inline-block;
+}
+
+.alive {
+    background-color: rgba(0, 0, 200, 0.8);
+}
+
+.dead {
+    background-color: rgba(200, 0, 0, 0.8);
+}
